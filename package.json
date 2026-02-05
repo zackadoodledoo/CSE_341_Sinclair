@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/zackadoodledoo/CSE_341_Sinclair#readme",
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "mangodb": "^1.0.0",
     "mongoose": "^9.1.6"

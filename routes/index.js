@@ -1,10 +1,8 @@
-// routes/index.js
-import express from 'express';
-import { getData } from '../controllers/index.js';
+import { Router } from 'express';
+import controllers from '../controllers/index.js';  // adjust path if needed
 
-const router = express.Router();
+const router = Router();
 
-// Define a single route
-router.get('/', getData);
+router.get('/', controllers.home);
 
 export default router;

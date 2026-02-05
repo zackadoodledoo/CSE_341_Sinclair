@@ -1,16 +1,18 @@
+import dotenv from 'dotenv'; 
+dotenv.config();
+
 import express from 'express';
+import routes from './routes/index.js';
+import { connectDB } from './db/connect.js';
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware (optional for now)
 app.use(express.json());
-
-// Use routes
-import routes from './routes/index.js';
 app.use('/', routes);
 
-// Start server
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
+  await connectDB();   // connect to MongoDB when server starts
   console.log(`Server running on http://localhost:${PORT}`);
 });
